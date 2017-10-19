@@ -1,0 +1,42 @@
+<!--Contractor Send Email Dialog -->
+<send-email-dialog> </send-email-dialog>
+
+
+<div *ngIf="isLoading" class="tradesman-grid-loading"></div>
+
+<div class="tradesman-grid-container">
+     <div class="tradesman-grid">
+         <div class="container-fluid">
+
+             <!--Toolbar-->
+            <div class="row-right tradesman-grid-toolbar">
+            
+                <div class="col tradesman-grid-header">
+                    <div class="col-xs-5 tradesman-grid-title">               
+                        <div class="tradesman-grid-title-all">ALL</div>
+                        <sc-checkbox (Touch)="onSelectAllRows($event)" [isSelected]="isAllRowsSelected"> </sc-checkbox>
+                    </div>
+                </div>
+
+    
+                <div class="col">
+                    <div (click)="onToolbarButton_sendEmail()" [class.tradesman-grid-toolbar-button-selected]="isToolbarButtonOn_sendEmail"  class="tradesman-grid-toolbar-button">
+                        <span class="fa fa-envelope"></span><b>Email</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        <div class="container-fluid"> </div>
+
+        <div class="container-fluid">
+            <!--Table body-->
+             <div class="tradesman-grid-rows">  
+                <contractors-grid-row
+                    (ToggleRow)="onToggleRow()" 
+                    *ngFor="let person of persons" [person]="person">
+                </contractors-grid-row>
+            </div>   
+        </div>   
+    </div>   
+</div>   

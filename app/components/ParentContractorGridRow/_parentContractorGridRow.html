@@ -1,0 +1,64 @@
+<div class="tradesman-grid-row" [class.darkgray]="true">
+    <!--Main Content -->
+    <div class="tradesman-grid-row-spinner" [class.active]="isLoading"></div>
+
+    <div class="tradesman-grid-row-border">
+          <!--PERSON INFO-->
+        <div class="col tradesman-grid-person">
+            <sc-checkbox [isSelected]="person.isSelected"></sc-checkbox>
+            <div class="tradesman-grid-person-info subcontractor-grid-person-info">
+                <span class="tradesman-grid-person-info-name">{{person.name}}</span>
+                <span class="tradesman-grid-person-info-email">{{person.email}}</span>
+            </div>
+        </div>
+
+        <!--status text -->
+        <div class="col wrapper-tradesman-grid-row-status">
+            <div class="row tradesman-grid-row-status">
+                <div class="col col-xs-6 tradesman-grid-row-status">
+                    <div class="tradesman-grid-row-status-info">
+                        <h1>{{person.getRenderData().text}}
+                        </h1>
+                        <div>{{person.getRenderData().subText}}</div>
+                    </div>
+                </div>
+
+                <div [class.no-display]="person.getRenderData().status != 0">
+                    <div class="col col-xs-3">
+                        <div class="tradesman-grid-button" (click)="onAcceptInvitation()">
+                            <button class="button order">
+                                <span>ACCEPT</span>
+                            </button>   
+                        </div>
+                    </div>
+                    
+                    <div class="col col-xs-3">
+                        <div class="tradesman-grid-button" (click)="onDeclineInvitation()">
+                            <button class="button decline">
+                                <span>DECLINE</span>
+                            </button>   
+                        </div>
+                    </div>
+                </div>
+                
+                <div [class.no-display]="person.getRenderData().status != 1">
+                                        
+                    <div class="col col-xs-6">
+                    
+                        <div class="delete-button-place">
+                            <span class="disconnect">
+                                <span>Disconnect</span>
+                            </span> 
+                            <span class="delete-button">
+                                <i class="fa fa-times-circle" aria-hidden="true"  (click)="onDisconnect()"></i>
+                            </span>
+                            
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of Main Content -->
+    </div>
+</div>    

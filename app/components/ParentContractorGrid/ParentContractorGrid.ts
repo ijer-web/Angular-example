@@ -5,7 +5,7 @@ import {SendEmailDialog, SendEmailDialogMode} from "../dlg/SendEmailDlg";
 
 @Component({
     selector: 'contractors-grid',
-    templateUrl: '_html/_contractorsGrid.html'
+    templateUrl: '_parentContractorGrid.html'
 })
 
 export class ContractorsGrid implements AfterViewInit {

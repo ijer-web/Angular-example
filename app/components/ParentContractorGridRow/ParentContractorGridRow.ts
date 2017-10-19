@@ -6,7 +6,7 @@ import {Alert} from "../../../shared/Alert";
 
 @Component({
     selector: 'contractors-grid-row',
-    templateUrl: '_html/_contractorsGridRow.html'
+    templateUrl: '_parentContractorGridRow.html'
 })
 
 export class ContractorsGridRow implements AfterViewInit{
